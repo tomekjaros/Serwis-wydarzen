@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <div th:replace="navbar :: headScripts"></div>
+</head>
+<body>
+<div th:replace="navbar :: navBar"></div>
+
+<form th:action ="@{/register}" metod="post">
+    <label>E-mail:</label><input type="email" name="email">
+    <br>
+    <label>Nickname:</label><input type="text" name="nickname">
+    <br>
+    <label>Password:</label><input type="password" name="password">
+    <br>
+    <input type="submit" value="Register">
+</form>
+
+
+<p>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+</p>
+<!--<div>-->
+<!--<p> Menu</p>-->
+<!--    <ul>-->
+<!--    <li><a th:href="@{/login}">Login</a></li>-->
+<!--    <li><a th:href="@{/register}">Register</a></li>-->
+<!--    </ul>-->
+<!--</div>-->
+<div th:replace="navbar :: footer"></div>
+
+</body>
+</html>
