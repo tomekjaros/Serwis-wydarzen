@@ -3,6 +3,8 @@ package com.example.Serwiswydarzen.entities;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name="users")
@@ -59,4 +61,15 @@ public class User {
     public void setCreated(LocalDateTime created) {
         this.created = created;
     }
+
+
+
+    @ManyToMany
+    @JoinTable(name = "users_roles")
+    private Set<Role> roles = new HashSet<>();
+
+    public void addRole(Role role) {
+        roles.add(role);
+    }
+
 }
