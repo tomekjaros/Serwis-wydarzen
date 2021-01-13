@@ -32,7 +32,7 @@ public class ConfigSecurity  extends WebSecurityConfigurerAdapter {
             .defaultSuccessUrl("/")
         .and()
             .logout()
-            .logoutRequestMatcher(new AntPathRequestMatcher("user-logout","GET"))
+            .logoutRequestMatcher(new AntPathRequestMatcher("/user-logout","GET"))
             .logoutSuccessUrl("/")
             .invalidateHttpSession(true);
     }
@@ -45,8 +45,8 @@ public class ConfigSecurity  extends WebSecurityConfigurerAdapter {
                         "FROM users u WHERE u.email = ?")
                 .authoritiesByUsernameQuery("SELECT u.email, r.name " +
                         "FROM users u " +
-                        "JOIN users_roles ur ON u.id = ur.user_id " +
-                        "JOIN roles r ON ur.roles_id = r.id " +
+                        "LEFT JOIN users_roles ur ON u.id = ur.user_id " +
+                        "LEFT JOIN roles r ON ur.roles_id = r.id " +
                         "WHERE u.email = ?")
                 .passwordEncoder(passwordEncoder);
     }
