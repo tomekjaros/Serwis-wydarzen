@@ -70,6 +70,12 @@ public class User {
 
     public void addRole(Role role) {
         roles.add(role);
-    }
 
-}
+//    @ManyToMany
+//    @JoinTable(name="users_evens")
+//    private Set<User> users = new HashSet<>();
+//
+//    public void addUser(User user){users.add(user)};
+//    }
+
+}}

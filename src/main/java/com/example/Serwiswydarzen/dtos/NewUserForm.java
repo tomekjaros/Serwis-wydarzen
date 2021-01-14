@@ -8,6 +8,7 @@ import javax.validation.constraints.Size;
 
 public class NewUserForm {
 
+    @NotNull
     @Email
     private String email;
 
