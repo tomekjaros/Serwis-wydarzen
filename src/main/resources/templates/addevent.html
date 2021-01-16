@@ -12,17 +12,28 @@
 
 
 <form th:action="@{/addevent}" th:object="${newEventForm}" method="post">
+
+        <div class="form-group">
     Title: <input type="text" th:field="*{eventTitle}" placeholder="Enter event title...">
     <span th:errors="*{eventTitle}"></span><br>
+        </div>
+    <div class="form-row">
+        <div class="form-group col-md-2">
     Date from: <input type="date" th:field="*{eventDateFrom}" placeholder="Enter date from">
     <span th:errors="*{eventDateFrom}"></span>
+        </div>
+        <div class="form-group col-md-2">
     Date to: <input type="date" th:field="*{eventDateTo}" placeholder="Enter date to">
     <span th:errors="*{eventDateTo}"></span>
+        </div>
+    </div>
     <br>
+        <div class="form-group">
     Content: <textarea th:field="*{eventBody}" rows="10" cols="100"></textarea>
     <span th:errors="*{eventBody}"></span>
+        </div>
     <br>
-    <input type="submit" value="Add new event">
+    <input  class="btn btn-primary" type="submit" value="Add new event">
 </form>
 
 

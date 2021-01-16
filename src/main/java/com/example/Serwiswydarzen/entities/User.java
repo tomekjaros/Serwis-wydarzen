@@ -22,6 +22,13 @@ public class User {
 
     private LocalDateTime created = LocalDateTime.now();
 
+    public User(String email) {
+        this.email = email;
+    }
+
+    public User() {
+    }
+
     public Long getId() {
         return id;
     }
@@ -72,8 +79,14 @@ public class User {
         roles.add(role);
 
 //    @ManyToMany
-//    @JoinTable(name="users_evens")
-//    private Set<User> users = new HashSet<>();
+//    @JoinTable (name = "users_events")
+//    Set<Event> events = new HashSet<>();
+
+
+
+
+
+
 //
 //    public void addUser(User user){users.add(user)};
 //    }
