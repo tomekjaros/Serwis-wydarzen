@@ -4,35 +4,40 @@
     <meta charset="UTF-8">
     <div th:replace="navbar :: headScripts"></div>
 
-
-
 </head>
 <body>
 
 
 <div th:replace="navbar :: navBar"></div>
+<h3 class="text-center" >Curent Events</h3><br>
+<div class="card text-center">
 
+<div  th:each="event : ${events}"><br>
+
+        <h4> <a th:href="@{/evetns/{eventId}(eventId=${event.id})}" class="card-header" th:text="${'Title: '+event.title}">Card title</a>   </h4>
+    <h5 class="card-titler" th:text="${'Date from : ' + event.dataFrom +' Date to : ' + event.dataTo}"> </h5>
+    <h6 class="card-text" th:text="${event.body}"></h6><br>
+    <hr>
+</div>
+</div>
+
+
+<br>
+<br>
 
 <p>
+
+
+
+
+
 <br>
 <br>
 <br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-    
+
 
 </p>
-<!--<div>-->
-<!--<p> Menu</p>-->
-<!--    <ul>-->
-<!--    <li><a th:href="@{/login}">Login</a></li>-->
-<!--    <li><a th:href="@{/register}">Register</a></li>-->
-<!--    </ul>-->
-<!--</div>-->
+
 <div th:replace="navbar :: footer"></div>
 </body>
 </html>

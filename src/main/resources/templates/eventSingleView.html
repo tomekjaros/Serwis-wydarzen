@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <div th:replace="navbar :: headScripts"></div>
+
+
+
+</head>
+<body>
+
+
+<div th:replace="navbar :: navBar"></div>
+<h3 class="text-center" >Event</h3><br>
+<div class="card text-center">
+
+
+
+        <h4  class="card-header" th:text="${'Title: '+event.title}" >Card title  </h4>
+        <h5 class="card-titler" th:text="${'Date from : ' + event.dataFrom +' Date to : ' + event.dataTo}"> </h5>
+        <h6 class="card-text" th:text="${event.body}"></h6><br>
+    </div>
+
+
+
+<br>
+<br>
+
+<p>
+
+<br>
+<br>
+<br>
+
+
+</p>
+
+<div th:replace="navbar :: footer"></div>
+</body>
+</html>
